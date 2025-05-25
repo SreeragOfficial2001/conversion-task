@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child Learning Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background-color: #e9e9e9;
+      }
+
+      .container {
+        max-width: 1140px;
+        margin: auto;
+        padding: 40px 20px;
+        background: #fff;
+      }
+
+      .section {
+        display: flex;
+        width: 100%;
+        height: 80vh;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+        gap: 20px;
+      }
+
+      .text {
+        max-width: 520px;
+      }
+
+      .text h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #000;
+        position: relative;
+      }
+
+      .arrow-wrap {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 4px;
+      }
+
+      .arrow-wrap img {
+        height: 24px;
+        vertical-align: middle;
+      }
+
+      .highlight-wrap {
+        display: inline-block;
+        position: relative;
+      }
+
+      .highlight {
+        color: #b42ab5;
+        position: relative;
+        z-index: 2;
+      }
+
+      .underline-img {
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+      }
+
+      .text p {
+        margin: 16px 0;
+        font-size: 14px;
+        color: #616161;
+      }
+
+      .discover-wrap {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+        gap: 14px;
+      }
+
+      .discover {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: #b42ab5;
+        color: white;
+        border-radius: 50%;
+        font-size: 22px;
+        text-decoration: none;
+      }
+
+      .discover:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 12px rgba(185, 70, 249, 0.6),
+          0 0 24px rgba(185, 70, 249, 0.7), 0 0 32px rgba(185, 70, 249, 0.5);
+      }
+
+      .discover-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #b42ab5;
+      }
+
+      .section2 {
+        background: #eef0ff;
+        padding: 60px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .section2 .text {
+        max-width: 520px;
+      }
+
+      .section2 .text h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .section2 .text .highlight {
+        color: #b946f9;
+      }
+
+      .price-card {
+        position: relative;
+        width: 240px;
+        height: 377px;
+      }
+
+      .price-card img {
+        width: 80%;
+        height: 80%;
+        border-radius: 20px;
+      }
+
+      .price-card .content {
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+      }
+
+      .price-card button {
+        background-color: transparent;
+        border-radius: 20px;
+        color: #fdd400;
+        height: 40px;
+        width: 80px;
+      }
+
+      .card-bottom {
+        position: absolute;
+        top: 150%;
+        font-weight: lighter;
+      }
+
+      .certificate {
+        margin-top: 16px;
+        font-size: 12px;
+        color: #b946f9;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+      }
+
+      .certificate img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .certificate-button {
+        color: #b42ab5;
+      }
+
+      .card-container {
+        width: 50%;
+        height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .left-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 20px;
+        position: relative;
+      }
+
+      .right-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .card-green {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card-black {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .card-decision {
+        background-color: #151517;
+        height: 100%;
+        padding: 1rem;
+        color: white;
+      }
+
+      .card-explore {
+        background-color: #388a7c;
+        height: 100%;
+        padding: 1rem;
+        color: white;
+      }
+
+      .card-guidance {
+        background-color: #344ac1;
+        height: 40%;
+        padding: 1rem;
+        color: white;
+        z-index: 1000;
+      }
+
+      .curlyLineIcon {
+        position: absolute;
+        right: 3rem;
+        bottom: 3rem;
+      }
+
+      /* ✅ Responsive Design Starts Here */
+      @media (max-width: 1024px) {
+        .section {
+          flex-direction: column;
+          height: auto;
+          padding-bottom: 40px;
+        }
+
+        .card-container {
+          width: 100%;
+          height: auto;
+          grid-template-columns: 1fr;
+        }
+
+        .left-box,
+        .right-box {
+          align-items: center;
+        }
+
+        .card-black {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card-decision,
+        .card-explore,
+        .card-guidance {
+          width: 90%;
+        }
+
+        .price-card {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .price-card img {
+          width: 70%;
+          height: auto;
+        }
+
+        .price-card .content {
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section2 {
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: center;
+        }
+
+        .section2 .text {
+          max-width: 100%;
+        }
+
+        .certificate {
+          justify-content: center;
+        }
+
+        .card-black img {
+          width: 80%;
+        }
+
+        .curlyLineIcon {
+          position: static;
+          margin-top: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .text h1,
+        .section2 .text h1 {
+          font-size: 24px;
+        }
+
+        .section2 .text h2 {
+          font-size: 20px;
+        }
+
+        .discover {
+          width: 36px;
+          height: 36px;
+          font-size: 18px;
+        }
+
+        .discover-text {
+          font-size: 14px;
+        }
+
+        .card-decision,
+        .card-explore,
+        .card-guidance {
+          padding: 0.75rem;
+        }
+
+        .underline-img {
+          bottom: -4px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="section">
+        <div class="text">
+          <h1>
+            We make it the way
+            <span class="arrow-wrap">
+              <img src="./assets/images/arrow.png" alt="arrow" />
+            </span>
+            <br />
+            your
+            <span class="highlight-wrap">
+              <span class="highlight">child</span>
+              <img
+                src="./assets/images/Vector 1.png"
+                alt="underline"
+                class="underline-img"
+              />
+            </span>
+            loves it
+          </h1>
+          <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis
+          </p>
+
+          <div class="discover-wrap">
+            <a href="#" class="discover"><i class="fas fa-play"></i></a>
+            <span class="discover-text">Discover now</span>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="left-box">
+            <img src="./assets/images/Rectangle 11.png" alt="" />
+            <div class="card-guidance">
+              <span><img src="./assets/images/Group 16.png" alt="" /></span>
+              <h4>Guidance</h4>
+              <p>
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+              </p>
+            </div>
+            <img
+              class="curlyLineIcon"
+              src="./assets/images/Group 48.png"
+              alt=""
+            />
+          </div>
+
+          <div class="right-box">
+            <div class="card-green">
+              <div class="card-explore">
+                <span><img src="./assets/images/Group 18.png" alt="" /></span>
+                <h4>Exploring skills</h4>
+                <p>
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+            <div class="card-black">
+              <div class="card-decision">
+                <span><img src="./assets/images/Group 17 (1).png" alt="" /></span>
+                <h4>Decision making</h4>
+                <p>
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+              <img src="./assets/images/Rectangle 12 (1).png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section2">
+        <div class="text">
+          <h1>
+            Much Enjoyable
+            <span class="highlight-wrap">
+              <span class="highlight">sessions</span>
+              <img
+                src="./assets/images/Vector 2 (1).png"
+                alt="underline"
+                class="underline-img"
+              />
+            </span>
+            <br />
+            wraps in
+          </h1>
+          <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis
+          </p>
+          <p class="certificate">
+            <span><img src="./assets/images/Group 37.png" alt="" /></span>
+            <span class="certificate-button">Certificate included</span>
+          </p>
+        </div>
+
+        <div class="price-card">
+          <img src="./assets/images/Group 35.png" alt="Price Ticket" />
+          <div class="content">
+            <h2>₹ 199</h2>
+            <br />
+            <p>Per head</p>
+            <br />
+            <button>60% OFF</button>
+            <p class="card-bottom">GET NOW</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
